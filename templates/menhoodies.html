@@ -1,0 +1,111 @@
+<!doctype html> 
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384- Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- jquery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!--External CSS-->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!--Internal CSS-->
+        <style>
+                /* Set the background image for the entire body or a specific container */
+                .bg-img {
+                    background-image: url('/static/images/bg5.jpg'); /* Replace 'background.jpg' with your actual background image URL */
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    height: 135vh; /* This can be adjusted to fit your design needs */
+                }
+            
+                /* Style for the cards used to display products */
+                .card {
+                    transform: scale(0.9);
+                    padding: 10px;
+                    transition: transform 0.3s ease; /* Smooth transition for scaling */
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+                }
+            
+                /* Hover effects for the cards */
+                .card:hover {
+                    transform: scale(1);
+                    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background on hover */
+                    backdrop-filter: blur(5px); /* Blur effect for background elements under the card */
+                }
+            
+                /* Styling for buttons within cards on hover */
+                .card:hover button {
+                    background-color: black;
+                    color: white; /* Ensuring the text color is white for contrast */
+                }
+            </style>
+            
+        
+        <title>Hoodies</title> 
+    </head>
+    <body class="bg-img container-fluid ">
+        {% include 'header.html' %}
+
+    {% block content %}
+    <!-- Content specific to each page -->
+    {% endblock %}
+        <!-- dynamically loading header.html using jquery using id -->
+        <div id="header"></div> 
+
+        <h1 class="text-center">Men Hoodies</h1>
+        <div class="container-fluid">
+            <!--creating grid layout for the products using card class and spacing them evenly.
+            creating 5 products in a row which when hovered increases the size of the card and background color to transparent-->
+            <div class="row" style="justify-content: space-evenly;" id="women">
+                <div class="col-lg-2 col-md-6 col-sm-12 card" >
+                    <img src="/static/images/h1.jpg"  height="300px" width="100%">
+                    <h4>Scott International </h4>
+                    <p>₹500<br>Rich Cotton Winter Wear Hooded Sweatshirt for Men'</p>
+                    <button class="btn btn-secondary" type="button"><i class="fa fa-cart-plus" ></i> Add to cart</button>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 col-sm-12 card">
+                    <img src="/static/images/h2.jpg"  height="300px" width="100%">
+                    <h4>Allen Solly </h4>
+                    <p>₹500<br>Men's Cotton Crew Neck Sweatshirt</p>
+                    <button class="btn btn-secondary" type="button"><i class="fa fa-cart-plus" ></i> Add to cart</button>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12 card">
+                    <img src="/static/images/h3.jpg"  height="300px" width="100%">
+                    <h4>LEWEL</h4>
+                    <p>₹500<br> Men's Stylish Hooded Graphic Printed T-Shirt</p>
+                    <button class="btn btn-secondary" type="button"><i class="fa fa-cart-plus" ></i> Add to cart</button>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12 card">
+                    <img src="/static/images/h4.jpg"   height="300px" width="100%">
+                    <h4>U.S. POLO ASSN.</h4>
+                    <p>₹500<br> Men Navy Embroidered Logo Hooded Sweatshirt</p>
+                    <button class="btn btn-secondary" type="button"><i class="fa fa-cart-plus" ></i> Add to cart</button>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12 card">
+                    <img src="/static/images/h5.jpg"   height="300px" width="100%">
+                    <h4>Pepe Jeans</h4>
+                    <p>₹500<br> Men's Escander Colourblock Zip Thru Hoodie</p>
+                    <button class="btn btn-secondary" type="button"><i class="fa fa-cart-plus" ></i> Add to cart</button>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- dynamically loading footer.html using jquery using id -->
+        <div id="footer"></div> 
+
+        <!-- dynamically loading header.html and footer.html using jquery using id -->
+        <script>
+            $(function(){
+                $("#header").load("header.html");
+                $("#footer").load("footer.html");
+            })
+        </script>
+        {% include 'footer.html' %}
+    </body>
+</html>

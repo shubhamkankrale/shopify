@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384- Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- jquery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- External CSS -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <title>Kids</title> 
+    </head>
+    <body class="bg-img container-fluid">
+
+        {% include 'header.html' %}
+
+    {% block content %}
+    <!-- Content specific to each page -->
+    {% endblock %}
+
+    
+
+        <!-- dynamically loading header.html using jquery using id -->
+        <div id="header"></div> 
+
+        <h1 class="text-center">Kids</h1>
+        <div class="container-fluid">
+            <!--creating grid layout for the products using card class and spacing them evenly.
+            creating 5 products in a row which when hovered increases the size of the card and background color to transparent-->
+            <div class="row" style="justify-content: space-evenly;" id="kid">
+                <div class="col-lg-2 col-md-6 col-sm-12 card">
+                    <img src="{{ url_for('static', filename='images/kid1.jpg') }}" height="300px" width="100%">
+                    <h4>White Frock</h4>
+                    <p>₹500<br>Girl's floral print frock</p>
+                    <button class="btn btn-secondary" type="button"><i class="fa fa-cart-plus" ></i> Add to cart</button>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12 card">
+                    <img src="{{ url_for('static', filename='images/kid2.jpg') }}" height="300px" width="100%">
+                    <h4>Jumpsuit</h4>
+                    <p>₹500<br>Kid's white and blue jumpsuit</p>
+                    <button class="btn btn-secondary" type="button"><i class="fa fa-cart-plus" ></i> Add to cart</button>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12 card">
+                    <img src="{{ url_for('static', filename='images/kid3.jpg') }}" height="300px" width="100%">
+                    <h4>Girl's Palazzo Set</h4>
+                    <p>₹500<br>Navy blue sequence worked Palazzo set </p>
+                    <button class="btn btn-secondary" type="button"><i class="fa fa-cart-plus" ></i> Add to cart</button>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12 card">
+                    <img src="{{ url_for('static', filename='images/kid4.jpg') }}" height="300px" width="100%">
+                    <h4>Panda dress</h4>
+                    <p>₹500<br>Baby's panda dress || Jumpsuit</p>
+                    <button class="btn btn-secondary" type="button"><i class="fa fa-cart-plus" ></i> Add to cart</button>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12 card">
+                    <img src="{{ url_for('static', filename='images/kid5.jpg') }}" height="300px" width="100%">
+                    <h4>Girl's lehenga set</h4>
+                    <p>₹500<br>Orange coloured sequenced lehenga set</p>
+                    <button class="btn btn-secondary" type="button"><i class="fa fa-cart-plus" ></i> Add to cart</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- dynamically loading footer.html using jquery using id -->
+        <div id="footer"></div> 
+
+        <!-- dynamically loading header.html and footer.html using jquery using id -->
+        <script>
+            $(function () {
+                $("#header").load("header.html");
+                $("#footer").load("footer.html");
+            });
+        </script>
+        {% include 'footer.html' %}
+    </body>
+</html>
